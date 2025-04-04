@@ -1,3 +1,4 @@
+import { Dropdown } from "react-bootstrap"
 // dropdown non funziona
 
 
@@ -41,17 +42,19 @@ const MyNavbar = function () {
                     </button>
 
                 </div>
-                <div className="dropdown">
-                    <a className="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+
+                <Dropdown>
+                    <Dropdown.Toggle variant="dark">
                         <img src="avatar.png" alt="netflix logo" width="30" height="30" />
-                    </a>
-                    <ul className="dropdown-menu dropdown-menu-end bg-dark" aria-labelledby="dropdownMenuLink">
-                    <li><a className="dropdown-item text-light link-dark" href="/profile.html">Profile</a></li>
-                    <li><a className="dropdown-item text-light link-dark" href="#">Notifications</a></li>
-                    <li><a className="dropdown-item text-light link-dark" href="http://www.google.com">Search</a></li>
-                    <li><a className="dropdown-item text-light link-dark" href="/settings.html">Settings</a></li>
-                    </ul>
-                </div>
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu className="dropdown-menu dropdown-menu-end bg-black">
+                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">Profile</Dropdown.Item>
+                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">Notifications</Dropdown.Item>
+                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">Search</Dropdown.Item>
+                        <Dropdown.Item href="/settings.html" className="dropdown-item text-light link-dark">Settings</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
             </div>
           </nav>
     </header>
