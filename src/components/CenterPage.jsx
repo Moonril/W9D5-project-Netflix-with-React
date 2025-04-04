@@ -1,10 +1,7 @@
 import { Component } from "react"
 import SingleRowOne from "./SingleRowOne"
-import SingleRowTwo from "./SingleRowTwo"
-import SingleRowThree from "./SingleRowThree"
 import { Dropdown } from "react-bootstrap"
 
-import MyCarousel from "./MyCarousel"
 
 class CenterPage extends Component {
     render() {
@@ -36,24 +33,24 @@ class CenterPage extends Component {
 
             </div>
         </section>
-            {/* trending */}
         <section className="container-fuid mx-5 my-3">
 
+            {/* trending */}
             <h2 className="text-light fs-4 my-3">Trending</h2>
             <div className="row my-3">
                 <SingleRowOne saga='harry potter' />
                 
             </div>
         
-        {/* watch it */}
         
+            {/* watch it */}
             <h2 className="text-light fs-4 my-3">Watch It Again</h2>
             <div className="row my-3">
              <SingleRowOne saga='pirates of the caribbean' />
             </div>
         
-        {/* <!-- new release --> */}
         
+            {/* <!-- new release --> */}
             <h2 className="text-light fs-4 my-3">New Releases</h2>
             <div className="row my-3">
             <SingleRowOne saga='star wars' />

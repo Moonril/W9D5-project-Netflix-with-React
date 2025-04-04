@@ -1,4 +1,5 @@
 import { Container } from "react-bootstrap"
+import { Dropdown } from "react-bootstrap"
 
 const MyProfile = function() {
     return (
@@ -17,29 +18,31 @@ const MyProfile = function() {
                     {/* se metto placeholder non mi funziona, metto value solo per avere qualcosa scritto nell'input */}
                     <input type="text" value="Profile Name" className="rounded-0 bg-secondary text-light border-0 p-1 w-50 my-1 mb-2" />
                     <label for="language" className="d-block text-secondary fw-bold my-1">Language:</label>
-                    <div className="dropdown">
-                        <a className="btn btn-secondary dropdown-toggle bg-transparent rounded-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          English
-                        </a>                
-                        <ul className="dropdown-menu bg-dark rounded-1">
-                          <li><a className="dropdown-item text-light link-dark" href="#">English</a></li>
-                          <li><a className="dropdown-item text-light link-dark" href="#">Italiano</a></li>
-                          <li><a className="dropdown-item text-light link-dark" href="#">日本語</a></li>
-                        </ul>
-                    </div>
+                    <Dropdown>
+                    <Dropdown.Toggle variant="dark" className="btn btn-secondary dropdown-toggle bg-transparent rounded-1 border-1 border-light">
+                        English
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu className="dropdown-menu dropdown-menu-end bg-black">
+                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">English</Dropdown.Item>
+                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">Italiano</Dropdown.Item>
+                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">日本語</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
 
                     <hr class="text-secondary" />
 
                     <label for="language" className="d-block text-secondary fw-bold my-1 fs-5">Maturity Settings:</label>
-                    <div className="dropdown">
-                        <a className="btn btn-secondary dropdown-toggle bg-secondary rounded-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          ALL MATURITY RATINGS
-                        </a>                
-                        <ul className="dropdown-menu bg-dark rounded-1">
-                          <li><a className="dropdown-item text-light link-dark" href="#">ALL MATURITY RATINGS</a></li>
-                          <li><a className="dropdown-item text-light link-dark" href="#">NO MATURITY RATINGS</a></li>
-                        </ul>
-                    </div>
+                    <Dropdown>
+                    <Dropdown.Toggle variant="secondary" className="btn btn-secondary dropdown-toggle bg-transparent rounded-1 border-1 border-light">
+                        ALL MATURITY RATINGS
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu className="dropdown-menu dropdown-menu-end bg-black">
+                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">ALL MATURITY RATINGS</Dropdown.Item>
+                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">NO MATURITY RATINGS</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
                     <p className="text-light my-2">Show titles of <span className="fw-bold">all maturity ratings</span> for this profile</p>
 
                     <button type="button" className="btn btn-outline-light rounded-0 my-2">Edit</button>

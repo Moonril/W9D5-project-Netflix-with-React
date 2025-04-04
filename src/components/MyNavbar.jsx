@@ -1,5 +1,4 @@
 import { Dropdown } from "react-bootstrap"
-// dropdown non funziona
 
 
 const MyNavbar = function () {

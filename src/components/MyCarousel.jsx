@@ -4,9 +4,6 @@ import "react-multi-carousel/lib/styles.css";
 
 const URL = 'http://www.omdbapi.com/?apikey=469ff3dc&s='
 
-const pirates = 'pirates of the caribbean' 
-const starWars = 'star wars'
-const dino = 'jurassic park'
 
 const responsive = {
   superLargeDesktop: {
@@ -32,17 +29,6 @@ const responsive = {
 }
 
 
-const styles = {
-
-    cardImage: {
-        objectFit: 'cover',
-        width: '20vw',
-        height: '40vh'
-    }
-
-}
-
-
 
 class MyCarousel extends Component {
 
@@ -50,9 +36,9 @@ class MyCarousel extends Component {
         movies: []
     }
 
-    getMovies = (saga) => {
+    getMovies = () => {
 
-        fetch(URL + saga)
+        fetch(URL + this.props.saga)
         .then((response)=>{
             if(response.ok){
                 return response.json()
@@ -79,7 +65,7 @@ class MyCarousel extends Component {
     }
 
     componentDidMount() {
-        this.getMovies(dino)
+        this.getMovies()
  
     }
 
@@ -98,7 +84,7 @@ class MyCarousel extends Component {
             itemClass="carousel-item-padding-10-px"
           >
             {this.state.movies.map((movie, index) => (
-              <img key={movie.imdbID} src={movie.Poster} alt={`slide ${index + 1}`} className="img-fluid" style={styles.cardImage} />
+              <img key={movie.imdbID} src={movie.Poster} alt={`slide ${index + 1}`} className="img-fluid locandine selezione" />
             ))}
           </Carousel>
         )

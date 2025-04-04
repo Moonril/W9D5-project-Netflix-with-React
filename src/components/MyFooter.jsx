@@ -1,5 +1,3 @@
-// aggiungere link on hover
-
 
 const MyFooter = function() {
     return(
