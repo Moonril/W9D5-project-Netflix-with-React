@@ -4,6 +4,7 @@ import './App.css'
 import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
 import CenterPage from './components/CenterPage'
+import MyProfile from './components/MyProfile'
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
 
       <MyNavbar />
 
-      <CenterPage />
+      {/* <CenterPage /> */}
+      <MyProfile />
       
 
       <MyFooter />

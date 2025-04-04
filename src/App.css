@@ -12,6 +12,16 @@
 }
 
 .selezione:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     z-index: 5;
+}
+
+.cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    margin-right: .5em;
 }
