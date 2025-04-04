@@ -5,6 +5,7 @@ import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
 import CenterPage from './components/CenterPage'
 import MyProfile from './components/MyProfile'
+import Settings from './components/Settings'
 
 function App() {
 
@@ -14,8 +15,9 @@ function App() {
 
       <MyNavbar />
 
-      {/* <CenterPage /> */}
-      <MyProfile />
+      <CenterPage />
+      {/* <MyProfile /> */}
+      {/* <Settings /> */}
       
 
       <MyFooter />

@@ -9,7 +9,7 @@ import MyCarousel from "./MyCarousel"
 class CenterPage extends Component {
     render() {
         return(
-            <main className=" p-1 flex-grow-1 bg-dark">
+            <main className="p-1 flex-grow-1 bg-dark">
         {/* titolo */}
         <section className="container">
             <div className="row">
