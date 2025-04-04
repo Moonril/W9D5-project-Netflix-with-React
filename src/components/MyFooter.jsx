@@ -1,5 +1,4 @@
-// aggiugnere link on hover
-
+// aggiungere link on hover
 
 
 const MyFooter = function() {

@@ -26,9 +26,9 @@ class SingleRowTwo extends Component {
         movies: []
     }
 
-    getMovies = (saga) => {
+    getMovies = () => {
 
-        fetch(URL + saga)
+        fetch(URL + this.props.listaFilm)
         .then((response)=>{
             if(response.ok){
                 return response.json()
@@ -55,7 +55,7 @@ class SingleRowTwo extends Component {
     }
 
     componentDidMount() {
-        this.getMovies(pirates)
+        this.getMovies()
   
 
     }

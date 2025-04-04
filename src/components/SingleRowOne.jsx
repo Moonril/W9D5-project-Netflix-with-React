@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { Col, Card, Spinner, Alert } from "react-bootstrap";
 
+// remove selected
+
 const URL = 'http://www.omdbapi.com/?apikey=469ff3dc&s='
 
 const pirates = 'pirates of the caribbean' 
@@ -13,12 +15,13 @@ class SingleRowOne extends Component {
     state = {
         movies: [],
         isLoading: true,
-        isError: false
+        isError: false,
+        selected: false
     }
 
-    getMovies = (saga) => {
+    getMovies = () => {
 
-        fetch(URL + saga)
+        fetch(URL + this.props.saga)
         .then((response)=>{
             if(response.ok){
                 return response.json()
@@ -53,7 +56,7 @@ class SingleRowOne extends Component {
     }
 
     componentDidMount() {
-        this.getMovies(harry)
+        this.getMovies()
     }
 
 
@@ -85,8 +88,23 @@ class SingleRowOne extends Component {
             {
                 this.state.movies.slice(0, 6).map((movie) =>( 
                         <Col key={movie.imdbID} xs={12} sm={6} md={4} lg={3} xl={2} className="px-0 mb-1 mb-md-0 mx-sm-0">
-                           <Card className="border-0 p-1 bg-dark">
-                                <Card.Img variant="top" src={movie.Poster} alt={movie.Title} className="w-100 locandine"/>
+                           <Card className="border-0 p-1 bg-dark selezione">
+                                <Card.Img variant="top" src={movie.Poster} alt={movie.Title} className="w-100 locandine" onClick={()=>{
+                                    this.setState({
+                                        selected: !this.state.selected,
+                                    })
+                                }}/>
+                            <Card.Title className="flex-grow-1 fs-6 text-light">{movie.Title}</Card.Title>
+
+                                {
+                                    this.state.selected && (
+                                        <Card.Body className="d-flex flex-column align-items-center bg-black text-light text-center">
+                                            <Card.Title className="flex-grow-1 fs-6">{movie.Title}</Card.Title>
+                                            <Card.Text>{movie.Year}</Card.Text>
+                                        </Card.Body>
+                                    )
+                                }
+
                             </Card>
                         </Col>
                 ))
