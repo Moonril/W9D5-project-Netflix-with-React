@@ -2,8 +2,21 @@ import { Component } from "react"
 import SingleRowOne from "./SingleRowOne"
 import { Dropdown } from "react-bootstrap"
 
+// volevo agigungere un cambio di stato per ogni genere ma non ho fatto a tempo :(((
+const fantasyMovies = ['star wars', 'harry potter', 'lord of the rings']
+const actionMovies = ['pirates of the caribbean', 'indiana jones', 'mission impossible']
+const horrorMovies = ['friday the 13th', 'halloween', 'nightmare on elm street']
+
+
 
 class CenterPage extends Component {
+
+    state = {
+        activeGenre: 'fantasy',
+    }
+
+
+
     render() {
         return(
             <main className="p-1 flex-grow-1 bg-dark">
@@ -19,9 +32,9 @@ class CenterPage extends Component {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu className="dropdown-menu bg-black rounded-1 ">
+                            <Dropdown.Item href="#/action-1" className="dropdown-item text-light link-dark">Fantasy</Dropdown.Item>
                             <Dropdown.Item href="#/action-1" className="dropdown-item text-light link-dark">Action</Dropdown.Item>
                             <Dropdown.Item href="#/action-1" className="dropdown-item text-light link-dark">Horror</Dropdown.Item>
-                            <Dropdown.Item href="#/action-1" className="dropdown-item text-light link-dark">Comedy</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -36,9 +49,9 @@ class CenterPage extends Component {
         <section className="container-fuid mx-5 my-3">
 
             {/* trending */}
-            <h2 className="text-light fs-4 my-3">Trending</h2>
+            <h2 className="text-light fs-4 my-3">Trending - Horror</h2>
             <div className="row my-3">
-                <SingleRowOne saga='harry potter' />
+                <SingleRowOne saga='friday the 13th' />
                 
             </div>
         
@@ -51,7 +64,7 @@ class CenterPage extends Component {
         
         
             {/* <!-- new release --> */}
-            <h2 className="text-light fs-4 my-3">New Releases</h2>
+            <h2 className="text-light fs-4 my-3">Old Releases</h2>
             <div className="row my-3">
             <SingleRowOne saga='star wars' />
             

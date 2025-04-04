@@ -5,7 +5,6 @@ import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
 import CenterPage from './components/CenterPage'
 
-
 /* commentare CenterPage e decommentare MyProfile o Settings */
 // import MyProfile from './components/MyProfile'
 // import Settings from './components/Settings'
@@ -19,6 +18,7 @@ function App() {
       <MyNavbar />
 
       <CenterPage />
+      
       {/* <MyProfile /> */}
       {/* <Settings /> */}
       
