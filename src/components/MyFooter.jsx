@@ -4,7 +4,7 @@
 
 const MyFooter = function() {
     return(
-        <footer className="mt-3 py-3 d-flex flex-column bg-dark">
+        <footer className="py-3 d-flex flex-column bg-dark">
         <div className="social d-flex mx-auto">
             <a className="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none me-1" href="/" aria-label="Bootstrap">
                 <i className="bi bi-facebook text-secondary"></i>

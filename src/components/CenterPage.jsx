@@ -1,11 +1,14 @@
-import { Component } from "react";
+import { Component } from "react"
+import SingleRowOne from "./SingleRowOne"
+import SingleRowTwo from "./SingleRowTwo"
+import SingleRowThree from "./SingleRowThree"
 
-import SingleRow from "./SingleRow";
+import MyCarousel from "./MyCarousel"
 
 class CenterPage extends Component {
     render() {
         return(
-            <main className="my-3 p-1 flex-grow-1 bg-dark">
+            <main className=" p-1 flex-grow-1 bg-dark">
         {/* titolo */}
         <section className="container">
             <div className="row">
@@ -35,21 +38,23 @@ class CenterPage extends Component {
 
             <h2 className="text-light fs-4 my-3">Trending</h2>
             <div className="row my-3">
-                <SingleRow />
+                <SingleRowOne />
+                
             </div>
         
         {/* watch it */}
         
             <h2 className="text-light fs-4 my-3">Watch It Again</h2>
             <div className="row my-3">
-
+             <SingleRowTwo />
             </div>
         
         {/* <!-- new release --> */}
         
             <h2 className="text-light fs-4 my-3">New Releases</h2>
             <div className="row my-3">
-
+                <SingleRowThree />
+            
             </div>
         </section>
 
