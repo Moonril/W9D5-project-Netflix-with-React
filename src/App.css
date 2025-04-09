@@ -3,6 +3,10 @@
     width: 30vw;
     height: 40vh;
 }
+.locandina {
+    object-fit: cover;
+    height: 100vh;
+}
 
 
 
