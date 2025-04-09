@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { useEffect, useState } from "react";
 import { Col, Card, Spinner, Alert } from "react-bootstrap";
 
 // remove selected
@@ -6,17 +6,20 @@ import { Col, Card, Spinner, Alert } from "react-bootstrap";
 const URL = 'http://www.omdbapi.com/?apikey=469ff3dc&s='
 
 
-class SingleRowOne extends Component {
+const SingleRowOne = function(props) {
 
-    state = {
+    /* state = {
         movies: [],
         isLoading: true,
         isError: false
-    }
+    } */
+    const [movies, setMovies] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [isError, setIsError] = useState(false)
 
-    getMovies = () => {
+    const getMovies = () => {
 
-        fetch(URL + this.props.saga)
+        fetch(URL + props.saga)
         .then((response)=>{
             if(response.ok){
                 return response.json()
@@ -35,35 +38,32 @@ class SingleRowOne extends Component {
 
             console.log('sorted movies', sortedMovies)
 
-
-            this.setState({
-                movies: sortedMovies,
-                isLoading: false
-            })         
+            setMovies(sortedMovies)
+            setIsLoading(false)
+      
         })
         .catch((err) => {
             console.log('errore', err)
-            this.setState({
-                isLoading: false,
-                isError: true
-            })
+
+            setIsLoading(false)
+            setIsError(true)
         })
     }
 
-    componentDidMount() {
-        this.getMovies()
-    }
+    useEffect(()=>{
+        getMovies()
+    },[])
 
 
 
-    render(){
+
         return(
             <>
 
             {/* spinner */}
 
             {
-                this.state.isLoading === true && (
+                isLoading === true && (
                     <div className="text-center">
                         <Spinner variant="primary" animation="border"  />
                     </div>
@@ -72,7 +72,7 @@ class SingleRowOne extends Component {
 
             {/* ERRORE */}
             {
-                this.state.isError && (
+                isError && (
                     <Alert variant='danger' className="text-center">
                         <i className="bi bi-bug"></i> Errore nella fetch <i className="bi bi-bug"></i>
                     </Alert>
@@ -81,7 +81,7 @@ class SingleRowOne extends Component {
 
 
             {
-                this.state.movies.slice(0, 6).map((movie) =>( 
+                movies.slice(0, 6).map((movie) =>( 
                         <Col key={movie.imdbID} xs={12} sm={6} md={4} lg={4} xl={2} className="px-0 mb-1 mb-md-0 mx-sm-0">
                            <Card className="border-0 p-1 bg-dark selezione">
                                 <Card.Img variant="top" src={movie.Poster} alt={movie.Title} className="w-100 locandine"/>
@@ -93,7 +93,6 @@ class SingleRowOne extends Component {
             }
             </>
         )
-    }
 }
 
 export default SingleRowOne

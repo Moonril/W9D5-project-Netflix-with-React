@@ -1,4 +1,4 @@
-import { Component } from "react"
+import { Component, useState } from "react"
 import SingleRowOne from "./SingleRowOne"
 import { Dropdown } from "react-bootstrap"
 
@@ -9,15 +9,14 @@ const horrorMovies = ['friday the 13th', 'halloween', 'nightmare on elm street']
 
 
 
-class CenterPage extends Component {
+const CenterPage = function() {
 
-    state = {
-        activeGenre: 'fantasy',
-    }
-
+    
+    const [activeGenre, setActiveGenre] = useState('fantasy')
 
 
-    render() {
+
+    
         return(
             <main className="p-1 flex-grow-1 bg-dark">
         {/* titolo */}
@@ -73,7 +72,7 @@ class CenterPage extends Component {
 
     </main>
         )
-    }
+    
 }
 
 export default CenterPage

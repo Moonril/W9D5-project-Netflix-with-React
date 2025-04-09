@@ -1,30 +1,36 @@
 import { Dropdown } from "react-bootstrap"
+import { Link, useLocation } from 'react-router-dom'
 
 
 const MyNavbar = function () {
+
+    const location = useLocation()
+
+
     return(
         <header>
         <nav className="navbar navbar-expand-md bg-dark">
             <div className="container-fluid">
-              <a className="navbar-brand" href="#">
+                <Link to='/' className="navbar-brand">
                 <img src="netflix_logo.png" alt="netflix logo" width="70" height="30" />
-              </a>
+                </Link>
+              
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <a className="nav-link active text-light" aria-current="page" href="#">Home</a>
+                        <Link to='/' className={location.pathname === '/' ? 'nav-link text-light' : 'nav-link text-secondary'} >Home</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link fw-bold text-light" href="#">TV Shows</a>
+                        <Link to='/' className={location.pathname === '/shows' ? 'nav-link text-light fw-bold' : 'nav-link fw-bold text-secondary'} >TV Shows</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link active text-light" aria-current="page" href="#">Movies</a>
+                        <Link to='/' className={location.pathname === '/movies' ? 'nav-link text-light' : 'nav-link text-secondary'} >Movies</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link active text-light" aria-current="page" href="#">Recently Added</a>
+                        <a className="nav-link text-secondary" aria-current="page" href="#">Recently Added</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link active text-light" aria-current="page" href="#">My List</a>
+                        <a className="nav-link text-secondary" aria-current="page" href="#">My List</a>
                     </li>
                     </ul>
 
@@ -48,10 +54,10 @@ const MyNavbar = function () {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu className="dropdown-menu dropdown-menu-end bg-black">
-                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">Profile</Dropdown.Item>
-                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">Notifications</Dropdown.Item>
-                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">Search</Dropdown.Item>
-                        <Dropdown.Item href="/settings.html" className="dropdown-item text-light link-dark">Settings</Dropdown.Item>
+                        <Link to='/profile' className={location.pathname === '/profile' ? 'dropdown-item text-light link-dark' : 'dropdown-item text-secondary link-dark'} >Profile</Link>
+                        <Link to='/notifications' className={location.pathname === '/notifications' ? 'dropdown-item text-light link-dark' : 'dropdown-item text-secondary link-dark'} >Notifications</Link>
+                        <Link to='/search' className={location.pathname === '/search' ? 'dropdown-item text-light link-dark' : 'dropdown-item text-secondary link-dark'} >Search</Link>
+                        <Link to='/settings' className={location.pathname === '/settings' ? 'dropdown-item text-light link-dark' : 'dropdown-item text-secondary link-dark'} >Settings</Link>
                     </Dropdown.Menu>
                 </Dropdown>
             </div>

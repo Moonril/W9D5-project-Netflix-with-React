@@ -4,7 +4,7 @@ import { Dropdown } from "react-bootstrap"
 const MyProfile = function() {
     return (
         <Container className="p-5 flex-grow-1 bg-dark">
-            <div class="row text-light">
+            <div className="row text-light">
                 <h1>Edit Profile</h1>
                 <hr />
             </div>
@@ -30,7 +30,7 @@ const MyProfile = function() {
                     </Dropdown.Menu>
                 </Dropdown>
 
-                    <hr class="text-secondary" />
+                    <hr className="text-secondary" />
 
                     <label for="language" className="d-block text-secondary fw-bold my-1 fs-5">Maturity Settings:</label>
                     <Dropdown>
@@ -47,7 +47,7 @@ const MyProfile = function() {
 
                     <button type="button" className="btn btn-outline-light rounded-0 my-2">Edit</button>
                     
-                    <hr class="text-secondary" />
+                    <hr className="text-secondary" />
                     
                     <p className="fs-5 text-secondary fw-bold">Autoplay controls</p>
                     <label className="d-block mt-2 text-light">
@@ -59,7 +59,7 @@ const MyProfile = function() {
                         autoplay previews while drowsing on all devices.
                     </label>
                 </form>
-                <hr class="text-secondary" />
+                <hr className="text-secondary" />
             </div>
         </div>
 
