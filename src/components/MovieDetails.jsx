@@ -1,5 +1,5 @@
 import { Col, Container, Row, Card, Badge, Spinner } from 'react-bootstrap'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { Link, useParams, useNavigate, Navigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const URL = 'https://www.omdbapi.com/?apikey=469ff3dc&i='
@@ -19,6 +19,7 @@ const MovieDetails = function () {
 
     const params = useParams()
     console.log(params.movieId) //id nella search
+    const navigate = useNavigate()
 
 
     // devo fare una fetch con l'id per riottenere il film
@@ -80,9 +81,23 @@ const MovieDetails = function () {
     }
 
 
-
+    // manca tutto il check per l'id
     useEffect(()=>{
+
         getMovie()
+        /* const foundMovie = movie.imdbID.toString() === params.movieId
+
+        if(!foundMovie){
+            setIsLoading(false)
+            navigate('/404')
+        } else {
+            setMovie(foundMovie)
+        }
+
+        console.log('foundMovie', foundMovie) */
+
+
+
         getComments()
     },[])
 
