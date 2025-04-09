@@ -23,7 +23,7 @@ const CenterPage = function() {
         <section className="container">
             <div className="row">
                 <div className="col-9 d-flex justify-content-start p-0">
-                    <h1 className="text-light me-1 mb-auto mb-0">TV Shows</h1>
+                    <h1 className="text-light me-1 mb-auto mb-0">Movies</h1>
 
                     <Dropdown className="my-auto ms-3">
                         <Dropdown.Toggle variant="dark" className="btn btn-secondary dropdown-toggle bg-transparent rounded-1 border-1 border-light">
@@ -31,9 +31,9 @@ const CenterPage = function() {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu className="dropdown-menu bg-black rounded-1 ">
-                            <Dropdown.Item href="#/action-1" className="dropdown-item text-light link-dark">Fantasy</Dropdown.Item>
-                            <Dropdown.Item href="#/action-1" className="dropdown-item text-light link-dark">Action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-1" className="dropdown-item text-light link-dark">Horror</Dropdown.Item>
+                            <Dropdown.Item href="action-1" className="dropdown-item text-light link-dark" onClick={()=>{setActiveGenre('fantasy')}}>Fantasy</Dropdown.Item>
+                            <Dropdown.Item href="action-1" className="dropdown-item text-light link-dark" onClick={()=>{setActiveGenre('action')}}>Action</Dropdown.Item>
+                            <Dropdown.Item href="action-1" className="dropdown-item text-light link-dark" onClick={()=>{setActiveGenre('horror')}}>Horror</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>

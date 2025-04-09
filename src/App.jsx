@@ -5,6 +5,8 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
 import CenterPage from './components/CenterPage'
+import MovieDetails from './components/MovieDetails'
+import NotFound from './components/NotFound'
 
 
 /* commentare CenterPage e decommentare MyProfile o Settings */
@@ -25,6 +27,9 @@ function App() {
           <Route path='/profile' element={<MyProfile />} />
           <Route path='/settings' element={<Settings />} />
           
+          <Route path="/movieDetails/:movieId" element={<MovieDetails />} />
+          
+          <Route path="*" element={<NotFound />} />
         </Routes>
         
 
