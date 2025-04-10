@@ -133,7 +133,7 @@ const MovieDetails = function () {
             <Row className='justify-content-center'>
                 <Col key={movie.imdbID} xs={6} className="px-0 mb-1 mb-md-0 mx-sm-0">
                     <Card className="border-0 p-1 bg-dark" >
-                        <Card.Img variant="top" src={movie.Poster} alt={movie.Title} className="w-100 locandina"/>
+                        <Card.Img variant="top" src={movie.Poster === "N/A" ? 'https://http.cat/images/404.jpg' : movie.Poster} alt={movie.Title} className="w-100 locandina"/>
                         <Card.Title className="fs-1 text-light pt-3 d-flex justify-content-between">{movie.Title} <span className='fs-4 text-secondary'>{movie.Runtime} - {movie.Genre}</span></Card.Title>
                         <Card.Text className='text-light text-center pt-3'>{movie.Plot}</Card.Text>
                         <Card.Text className='text-light pt-2 m-0'>

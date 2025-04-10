@@ -10,6 +10,7 @@ const SearchPage = function (){
     const [movies, setMovies] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
+    const [debouncedSearch, setDebouncedSearch] = useState('')
 
     const getMovies = () => {
 
@@ -45,8 +46,21 @@ const SearchPage = function (){
     }
 
     useEffect(()=>{
-            getMovies()
+        const handler = setTimeout(() => {
+            setDebouncedSearch(search)
+        }, 500)
+
+        return () => {
+            clearTimeout(handler)
+        }
+            
         },[search])
+
+    useEffect(()=>{
+        if(debouncedSearch){
+            getMovies()
+        }
+    }, [debouncedSearch])
 
 
     return(
@@ -80,7 +94,7 @@ const SearchPage = function (){
                            <Card className="border-0 p-1 bg-dark selezione">
                             {/* <img src="https://placecats.com/200/200" alt="" /> */}
                                 <Link to={'/movieDetails/' + movie.imdbID} >
-                                    <Card.Img variant="top" src={movie.Poster} alt={movie.Title} className="w-100 locandine"/>
+                                    <Card.Img variant="top" src={movie.Poster === "N/A" ? 'https://http.cat/images/404.jpg' : movie.Poster} alt={movie.Title} className="w-100 locandine"/>
                                 </Link>
                             <Card.Title className="flex-grow-1 fs-6 text-light">{movie.Title}</Card.Title>
                             </Card>
