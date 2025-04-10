@@ -16,6 +16,7 @@ const MyProfile = function() {
             <div className="col-12 col-md-9 p-2">
                 <form action="">
                     {/* se metto placeholder non mi funziona, metto value solo per avere qualcosa scritto nell'input */}
+                    {/* You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`. */}
                     <input type="text" value="Profile Name" className="rounded-0 bg-secondary text-light border-0 p-1 w-50 my-1 mb-2" />
                     <label for="language" className="d-block text-secondary fw-bold my-1">Language:</label>
                     <Dropdown>
@@ -24,9 +25,9 @@ const MyProfile = function() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu className="dropdown-menu dropdown-menu-end bg-black">
-                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">English</Dropdown.Item>
-                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">Italiano</Dropdown.Item>
-                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">日本語</Dropdown.Item>
+                        <Dropdown.Item className="dropdown-item text-light link-dark">English</Dropdown.Item>
+                        <Dropdown.Item className="dropdown-item text-light link-dark">Italiano</Dropdown.Item>
+                        <Dropdown.Item className="dropdown-item text-light link-dark">日本語</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
 
@@ -39,8 +40,8 @@ const MyProfile = function() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu className="dropdown-menu dropdown-menu-end bg-black">
-                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">ALL MATURITY RATINGS</Dropdown.Item>
-                        <Dropdown.Item href="/profile.html" className="dropdown-item text-light link-dark">NO MATURITY RATINGS</Dropdown.Item>
+                        <Dropdown.Item className="dropdown-item text-light link-dark">ALL MATURITY RATINGS</Dropdown.Item>
+                        <Dropdown.Item className="dropdown-item text-light link-dark">NO MATURITY RATINGS</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                     <p className="text-light my-2">Show titles of <span className="fw-bold">all maturity ratings</span> for this profile</p>

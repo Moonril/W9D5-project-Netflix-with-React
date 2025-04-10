@@ -12,6 +12,7 @@ import NotFound from './components/NotFound'
 /* commentare CenterPage e decommentare MyProfile o Settings */
 import MyProfile from './components/MyProfile'
 import Settings from './components/Settings'
+import SearchPage from './components/SearchPage'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/' element={<CenterPage />} />
           <Route path='/profile' element={<MyProfile />} />
           <Route path='/settings' element={<Settings />} />
+          <Route path='/search' element={<SearchPage />} />
           
           <Route path="/movieDetails/:movieId" element={<MovieDetails />} />
           
