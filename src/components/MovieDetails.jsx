@@ -84,18 +84,23 @@ const MovieDetails = function () {
     // manca tutto il check per l'id
     useEffect(()=>{
 
-        getMovie()
         /* const foundMovie = movie.imdbID.toString() === params.movieId
-
+        
         if(!foundMovie){
             setIsLoading(false)
             navigate('/404')
-        } else {
-            setMovie(foundMovie)
+            } else {
+                setMovie(foundMovie)
         }
-
+        
         console.log('foundMovie', foundMovie) */
-
+        /* if(!params){
+            navigate('/404')
+            return
+            
+        } */
+        
+        getMovie()
 
 
         getComments()

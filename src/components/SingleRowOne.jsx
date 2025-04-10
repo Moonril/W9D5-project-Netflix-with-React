@@ -48,7 +48,7 @@ const SingleRowOne = function(props) {
 
     useEffect(()=>{
         getMovies()
-    },[])
+    },[props.saga])
 
 
 

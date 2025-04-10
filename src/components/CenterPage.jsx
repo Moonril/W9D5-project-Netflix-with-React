@@ -1,4 +1,4 @@
-import { Component, useState } from "react"
+import { useEffect, useState } from "react"
 import SingleRowOne from "./SingleRowOne"
 import { Dropdown } from "react-bootstrap"
 
@@ -16,6 +16,9 @@ const CenterPage = function() {
 
 
 
+    useEffect(()=>{
+        setActiveGenre(activeGenre)
+    }, [activeGenre])
     
         return(
             <main className="p-1 flex-grow-1 bg-dark">
@@ -31,9 +34,9 @@ const CenterPage = function() {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu className="dropdown-menu bg-black rounded-1 ">
-                            <Dropdown.Item href="action-1" className="dropdown-item text-light link-dark" onClick={()=>{setActiveGenre('fantasy')}}>Fantasy</Dropdown.Item>
-                            <Dropdown.Item href="action-1" className="dropdown-item text-light link-dark" onClick={()=>{setActiveGenre('action')}}>Action</Dropdown.Item>
-                            <Dropdown.Item href="action-1" className="dropdown-item text-light link-dark" onClick={()=>{setActiveGenre('horror')}}>Horror</Dropdown.Item>
+                            <Dropdown.Item className="dropdown-item text-light link-dark" onClick={()=>{setActiveGenre('fantasy')}}>Fantasy</Dropdown.Item>
+                            <Dropdown.Item className="dropdown-item text-light link-dark" onClick={()=>{setActiveGenre('action')}}>Action</Dropdown.Item>
+                            <Dropdown.Item className="dropdown-item text-light link-dark" onClick={()=>{setActiveGenre('horror')}}>Horror</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -48,9 +51,16 @@ const CenterPage = function() {
         <section className="container-fuid mx-5 my-3">
 
             {/* trending */}
-            <h2 className="text-light fs-4 my-3">Trending - Horror</h2>
+            <h2 className="text-light fs-4 my-3">Trending - {
+            activeGenre === 'horror' ? 'Horror' : 
+            activeGenre === 'fantasy'? 'Fantasy' : 
+            activeGenre === 'action' ? 'Action' : ''
+                }</h2>
             <div className="row my-3">
-                <SingleRowOne saga='friday the 13th' />
+                <SingleRowOne saga={
+                activeGenre === 'fantasy' ? fantasyMovies[0] : 
+                activeGenre === 'horror' ? horrorMovies[0] : 
+                activeGenre === 'action' ? actionMovies[0] : 'fantasy'} />
                 
             </div>
         
@@ -58,14 +68,20 @@ const CenterPage = function() {
             {/* watch it */}
             <h2 className="text-light fs-4 my-3">Watch It Again</h2>
             <div className="row my-3">
-             <SingleRowOne saga='pirates of the caribbean' />
+             <SingleRowOne saga={
+                activeGenre === 'fantasy' ? fantasyMovies[1] : 
+                activeGenre === 'horror' ? horrorMovies[1] : 
+                activeGenre === 'action' ? actionMovies[1] : 'fantasy'} />
             </div>
         
         
             {/* <!-- new release --> */}
             <h2 className="text-light fs-4 my-3">Old Releases</h2>
             <div className="row my-3">
-            <SingleRowOne saga='star wars' />
+            <SingleRowOne saga={
+                activeGenre === 'fantasy' ? fantasyMovies[2] : 
+                activeGenre === 'horror' ? horrorMovies[2] : 
+                activeGenre === 'action' ? actionMovies[2] : 'fantasy'} />
             
             </div>
         </section>
