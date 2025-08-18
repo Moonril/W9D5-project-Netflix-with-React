@@ -25,14 +25,14 @@ const SingleRowOne = function(props) {
         })
         .then((data) => {
             // array di film
-            console.log('film object', data)
-            console.log('film array', data.Search)
+            //console.log('film object', data)
+            //console.log('film array', data.Search)
 
 
             // film riordinati per anno di uscita
             const sortedMovies = data.Search.sort((a, b) => parseInt(a.Year) - parseInt(b.Year))
 
-            console.log('sorted movies', sortedMovies)
+            //console.log('sorted movies', sortedMovies)
 
             setMovies(sortedMovies)
             setIsLoading(false)
@@ -78,12 +78,23 @@ const SingleRowOne = function(props) {
 
             {
                 movies.slice(0, 6).map((movie) =>( 
-                        <Col key={movie.imdbID} xs={12} sm={6} md={4} lg={4} xl={2} className="px-0 mb-1 mb-md-0 mx-sm-0">
+                        <Col key={movie.imdbID} xs={6} md={4} lg={4} xl={3} className="px-0 mb-1 mb-md-0 mx-sm-0">
                            <Card className="border-0 p-1 bg-dark selezione">
                                 <Link to={'/movieDetails/' + movie.imdbID} >
-                                    <Card.Img variant="top" src={movie.Poster} alt={movie.Title} className="w-100 locandine"/>
+                                    <Card.Img variant="top" src={movie.Poster} alt={movie.Title} className="card-img locandine"/>
                                 </Link>
                             <Card.Title className="flex-grow-1 fs-6 text-light">{movie.Title}</Card.Title>
+                            <Card.Body className="fw-light text-white flex-column p-1">
+                                <div className="fs-3 flex-row align-content-between text-light">
+                                    <div>
+                                       <i className="bi bi-play-circle"></i><i className="bi bi-plus-circle"></i><i class="bi bi-hand-thumbs-up"></i> 
+                                    </div>
+                                     <i className="bi bi-caret-down-square"></i>
+                                </div>
+                                <div>18+ tipo: movie/series, how many episodes<i class="bi bi-badge-hd"></i></div>
+                                <div>crime &middot; drama &middot; etc</div>
+                                
+                            </Card.Body>
                             </Card>
                         </Col>
                 ))

@@ -8,7 +8,7 @@ const MyNavbar = function () {
 
 
     return(
-        <header>
+        <header className="sticky-top">
         <nav className="navbar navbar-expand-md bg-dark">
             <div className="container-fluid">
                 <Link to='/' className="navbar-brand">
@@ -17,21 +17,21 @@ const MyNavbar = function () {
               
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item">
-                        <Link to='/' className={location.pathname === '/' ? 'nav-link text-light' : 'nav-link text-secondary'} >Home</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to='/' className={location.pathname === '/shows' ? 'nav-link text-light fw-bold' : 'nav-link fw-bold text-secondary'} >TV Shows</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to='/' className={location.pathname === '/movies' ? 'nav-link text-light' : 'nav-link text-secondary'} >Movies</Link>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-secondary" aria-current="page" href="#">Recently Added</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-secondary" aria-current="page" href="#">My List</a>
-                    </li>
+                        <li className="nav-item">
+                            <Link to='/' className={location.pathname === '/' ? 'nav-link text-light' : 'nav-link text-secondary'} >Home</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to='/' className={location.pathname === '/shows' ? 'nav-link text-light fw-bold' : 'nav-link fw-bold text-secondary'} >TV Shows</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to='/' className={location.pathname === '/movies' ? 'nav-link text-light' : 'nav-link text-secondary'} >Movies</Link>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link text-secondary" aria-current="page" href="#">Recently Added</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link text-secondary" aria-current="page" href="#">My List</a>
+                        </li>
                     </ul>
 
 
@@ -50,7 +50,7 @@ const MyNavbar = function () {
 
                 <Dropdown>
                     <Dropdown.Toggle variant="dark">
-                        <img src="avatar.png" alt="netflix logo" width="30" height="30" />
+                        <img src="avatar.png" alt="netflix logo" width="35" height="35" className="rounded" />
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu className="dropdown-menu dropdown-menu-end bg-black">

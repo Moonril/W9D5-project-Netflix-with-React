@@ -23,7 +23,7 @@ const CenterPage = function() {
         return(
             <main className="p-1 flex-grow-1 bg-dark">
         {/* titolo */}
-        <section className="container">
+        <section className="container-fluid ps-4 ps-md-5">
             <div className="row">
                 <div className="col-9 d-flex justify-content-start p-0">
                     <h1 className="text-light me-1 mb-auto mb-0">Movies</h1>
@@ -41,14 +41,14 @@ const CenterPage = function() {
                     </Dropdown>
                 </div>
     
-                <div className="col-3 d-flex justify-content-end">
+                {/* <div className="col-3 d-flex justify-content-end">
                     <button type="button" className="btn btn-outline-light rounded-1 my-auto"><i className="bi bi-list"></i></button>
 
-                </div>
+                </div> */}
 
             </div>
         </section>
-        <section className="container-fuid mx-5 my-3">
+        <section className="container-fuid mx-3 mx-md-5 my-3">
 
             {/* trending */}
             <h2 className="text-light fs-4 my-3">Trending - {
