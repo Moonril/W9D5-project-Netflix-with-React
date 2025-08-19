@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import SingleRowOne from "./SingleRowOne"
 import { Dropdown } from "react-bootstrap"
 
-// volevo agigungere un cambio di stato per ogni genere ma non ho fatto a tempo :(((
+// volevo aggiungere un cambio di stato per ogni genere ma non ho fatto a tempo :(((
 const fantasyMovies = ['star wars', 'harry potter', 'lord of the rings']
 const actionMovies = ['pirates of the caribbean', 'indiana jones', 'mission impossible']
 const horrorMovies = ['friday the 13th', 'halloween', 'nightmare on elm street']
