@@ -4,7 +4,7 @@ import './App.css'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
-import CenterPage from './components/CenterPage'
+import MovieCenterPage from './components/MovieCenterPage'
 import MovieDetails from './components/MovieDetails'
 import NotFound from './components/NotFound'
 
@@ -13,6 +13,7 @@ import NotFound from './components/NotFound'
 import MyProfile from './components/MyProfile'
 import Settings from './components/Settings'
 import SearchPage from './components/SearchPage'
+import HomeCenterPage from './components/HomeCenterPage'
 
 function App() {
 
@@ -24,7 +25,8 @@ function App() {
         <MyNavbar />
 
         <Routes>
-          <Route path='/' element={<CenterPage />} />
+          <Route path='/' element={<HomeCenterPage />} />
+          <Route path='/movies' element={<MovieCenterPage />} />
           <Route path='/profile' element={<MyProfile />} />
           <Route path='/settings' element={<Settings />} />
           <Route path='/search' element={<SearchPage />} />

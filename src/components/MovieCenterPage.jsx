@@ -9,7 +9,7 @@ const horrorMovies = ['friday the 13th', 'halloween', 'nightmare on elm street']
 
 
 
-const CenterPage = function() {
+const MovieCenterPage = function() {
 
     
     const [activeGenre, setActiveGenre] = useState('fantasy')
@@ -91,4 +91,4 @@ const CenterPage = function() {
     
 }
 
-export default CenterPage
+export default MovieCenterPage

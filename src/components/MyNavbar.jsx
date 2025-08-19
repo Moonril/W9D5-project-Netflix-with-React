@@ -24,7 +24,7 @@ const MyNavbar = function () {
                             <Link to='/' className={location.pathname === '/shows' ? 'nav-link text-light fw-bold' : 'nav-link fw-bold text-secondary'} >TV Shows</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/' className={location.pathname === '/movies' ? 'nav-link text-light' : 'nav-link text-secondary'} >Movies</Link>
+                            <Link to='/movies' className={location.pathname === '/movies' ? 'nav-link text-light' : 'nav-link text-secondary'} >Movies</Link>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link text-secondary" aria-current="page" href="#">Recently Added</a>
