@@ -102,6 +102,8 @@ const SearchPage = function (){
                     ))
                 }
             </Row>
+
+                        
             </Container>
 
         </main>

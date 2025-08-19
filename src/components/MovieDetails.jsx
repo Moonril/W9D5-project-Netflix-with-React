@@ -52,7 +52,7 @@ const MovieDetails = function () {
 
     // prendiamo i commenti
 
-    const getComments = () => {
+   /*  const getComments = () => {
 
         fetch(URLComments + params.movieId, {
             headers: {
@@ -78,7 +78,7 @@ const MovieDetails = function () {
             setIsLoading(false)
             setIsError(true)
         })
-    }
+    } */
 
 
     // manca tutto il check per l'id
@@ -103,7 +103,7 @@ const MovieDetails = function () {
         getMovie()
 
 
-        getComments()
+        /* getComments() */
     },[])
 
 
@@ -131,14 +131,20 @@ const MovieDetails = function () {
             }
 
             <Row className='justify-content-center'>
-                <Col key={movie.imdbID} xs={6} className="px-0 mb-1 mb-md-0 mx-sm-0">
-                    <Card className="border-0 p-1 bg-dark" >
-                        <Card.Img variant="top" src={movie.Poster === "N/A" ? 'https://http.cat/images/404.jpg' : movie.Poster} alt={movie.Title} className="w-100 locandina"/>
-                        <Card.Title className="fs-1 text-light pt-3 d-flex justify-content-between">{movie.Title} <span className='fs-4 text-secondary'>{movie.Runtime} - {movie.Genre}</span></Card.Title>
-                        <Card.Text className='text-light text-center pt-3'>{movie.Plot}</Card.Text>
-                        <Card.Text className='text-light pt-2 m-0'>
-                            Writer: {movie.Writer}</Card.Text>
-                        <Card.Text className='text-light'>Director: {movie.Director}</Card.Text>
+                <Col key={movie.imdbID} xs={11} md={10} lg={8} className="px-0 mb-1 mb-md-0 mx-sm-0">
+                    <Card className="border-0 p-1 bg-dark d-flex flex-col flex-lg-row" >
+                        <Card.Img variant="top" src={movie.Poster === "N/A" ? 'https://http.cat/images/404.jpg' : movie.Poster} alt={movie.Title} className="w-100 locandina p-0 p-md-5"/>
+                        <Card.Body>
+                            <Card.Text className='fs-6 text-secondary m-0'>{movie.Year} &middot; {movie.Runtime} &middot; <i className="bi bi-badge-hd"></i> &middot; <span className='fs-6'>{movie.Rated}</span></Card.Text>
+                            <Card.Title className="fs-2 text-light pt-3 d-flex justify-content-between">{movie.Title}</Card.Title>
+                            <Card.Text className='fs-5 text-secondary'>{movie.Genre}</Card.Text>
+                            <Card.Text className='text-light text-center pt-3'>{movie.Plot}</Card.Text>
+                            <Card.Text className='pt-2 m-0 text-secondary'>
+                                Writer: {movie.Writer}</Card.Text>
+                            <Card.Text className='text-secondary'>Director: {movie.Director}</Card.Text>
+                            <Card.Text className='text-secondary'>Actors: {movie.Actors}</Card.Text>
+
+                        </Card.Body>
                     </Card>
                     <div className='text-light text-center d-flex flex-column justify-content-center border border-1'>
 
