@@ -2,7 +2,7 @@ import { Button, Card, Col, Container, Form, Row } from "react-bootstrap"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
-const URL = 'http://www.omdbapi.com/?apikey=469ff3dc&s='
+const URL = 'https://www.omdbapi.com/?apikey=469ff3dc&s='
 
 const SearchPage = function (){
 
