@@ -23,12 +23,12 @@ const SearchPage = function (){
             }
         })
         .then((data) => {
-            // array di film
-            console.log('film object', data)
-            console.log('film array', data.Search)
+            // array movies
+            //console.log('film object', data)
+            //console.log('film array', data.Search)
 
 
-            // film riordinati per anno di uscita
+            // filter by year
             const sortedMovies = data.Search.sort((a, b) => parseInt(a.Year) - parseInt(b.Year))
 
             console.log('sorted movies', sortedMovies)
@@ -85,7 +85,7 @@ const SearchPage = function (){
 
             <Row>
 
-                {/* da inserire in un filter + map */}
+                
 
                 {
                     movies.map((movie) => (

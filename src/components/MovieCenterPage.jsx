@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import SingleRowOne from "./SingleRowOne"
 import { Dropdown } from "react-bootstrap"
 
-// volevo aggiungere un cambio di stato per ogni genere ma non ho fatto a tempo :(((
+
 const fantasyMovies = ['star wars', 'harry potter', 'lord of the rings']
 const actionMovies = ['pirates of the caribbean', 'indiana jones', 'mission impossible']
 const horrorMovies = ['friday the 13th', 'halloween', 'nightmare on elm street']
@@ -22,7 +22,7 @@ const MovieCenterPage = function() {
     
         return(
             <main className="p-1 flex-grow-1 bg-dark">
-        {/* titolo */}
+        {/* title */}
         <section className="container-fluid ps-4 ps-md-5">
             <div className="row">
                 <div className="col-9 d-flex justify-content-start p-0">

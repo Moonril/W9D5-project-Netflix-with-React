@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
-import { Col, Card, Spinner, Alert, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react"
+import { Col, Card, Spinner, Alert, Row } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
-// remove selected
-
-const URL = 'http://www.omdbapi.com/?apikey=469ff3dc&s='
+const URL = 'https://www.omdbapi.com/?apikey=469ff3dc&s='
 
 
 const SingleRowOne = function(props) {
@@ -25,12 +23,11 @@ const SingleRowOne = function(props) {
             }
         })
         .then((data) => {
-            // array di film
+
             //console.log('film object', data)
             //console.log('film array', data.Search)
 
-
-            // film riordinati per anno di uscita
+            // filter by year
             const sortedMovies = data.Search.sort((a, b) => parseInt(a.Year) - parseInt(b.Year))
 
             //console.log('sorted movies', sortedMovies)
@@ -68,7 +65,7 @@ const SingleRowOne = function(props) {
                 )
             }
 
-            {/* ERRORE */}
+            {/* ERROR */}
             {
                 isError && (
                     <Alert variant='danger' className="text-center">
@@ -81,15 +78,15 @@ const SingleRowOne = function(props) {
             {
                 movies.slice(0, 6).map((movie) =>( 
                     <Col key={movie.imdbID} xs={6} md={4} lg={4} xl={2} className="px-0 mb-1 mb-md-0 mx-sm-0">
-                                <Card className="border-0 p-1 bg-dark selezione card-main position-relative">
+                                <Card className="border-0 m-1 bg-dark selezione card-main position-relative shadow-lg">
                                         <Link to={'/movieDetails/' + movie.imdbID} >
                                             <Card.Img variant="top" src={movie.Poster} alt={movie.Title} className="card-img locandine"/>
                                         </Link>
                                     
                                     <Card.Body className="fw-light text-white flex-column p-1 card-body-main px-2 rounded">
-                                        <div className="fs-1 d-flex flex-row text-dark-emphasis justify-content-between p-1">
+                                        <div className="fs-1 d-flex flex-row text-dark-emphasis justify-content-between p-0">
                                             <div>
-                                            <i className="bi bi-play-circle"> </i><i className="bi bi-plus-circle"> </i><i className="bi bi-hand-thumbs-up"></i> 
+                                            <i className="bi bi-play-circle"></i><i className="bi bi-plus-circle"></i><i className="bi bi-hand-thumbs-up"></i>
                                             </div>
                                             <i className="bi bi-caret-down-square"></i>
                                         </div>

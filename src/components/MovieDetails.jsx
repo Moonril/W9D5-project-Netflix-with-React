@@ -18,13 +18,10 @@ const MovieDetails = function () {
     const [isError, setIsError] = useState(false)
 
     const params = useParams()
-    console.log(params.movieId) //id nella search
+    console.log(params.movieId)
     const navigate = useNavigate()
 
 
-    // devo fare una fetch con l'id per riottenere il film
-    //come faccioa importare l'id nella fetch?
-    // altra fetch per i commenti?
     const getMovie = () => {
 
     fetch(URL + params.movieId)
@@ -50,60 +47,14 @@ const MovieDetails = function () {
 }
 
 
-    // prendiamo i commenti
-
-   /*  const getComments = () => {
-
-        fetch(URLComments + params.movieId, {
-            headers: {
-                "Authorization": APIKey
-            }
-        })
-        .then((response) => {
-            if(response.ok){
-                return response.json()
-            } else {
-                throw new Error('response not ok')
-            }
-        })
-        .then((data) => {
-            console.log('getcomments', data)
-    
-            setComments(data)
-            setIsLoading(false)
-        })
-        .catch((err) => {
-            console.log('errore', err)
-    
-            setIsLoading(false)
-            setIsError(true)
-        })
-    } */
 
 
-    // manca tutto il check per l'id
     useEffect(()=>{
 
-        /* const foundMovie = movie.imdbID.toString() === params.movieId
-        
-        if(!foundMovie){
-            setIsLoading(false)
-            navigate('/404')
-            } else {
-                setMovie(foundMovie)
-        }
-        
-        console.log('foundMovie', foundMovie) */
-        /* if(!params){
-            navigate('/404')
-            return
-            
-        } */
         
         getMovie()
 
 
-        /* getComments() */
     },[])
 
 
