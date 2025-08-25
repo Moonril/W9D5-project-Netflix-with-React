@@ -91,12 +91,12 @@ const SearchPage = function (){
                     movies.map((movie) => (
 
                 <Col key={movie.imdbID}  xs={12} sm={6} md={4} lg={4} xl={2} className="px-0 mb-1 mb-md-0 mx-sm-0">
-                           <Card className="border-0 p-1 bg-dark selezione">
+                           <Card className="border-0 m-1 bg-dark selezione shadow-lg">
                             {/* <img src="https://placecats.com/200/200" alt="" /> */}
                                 <Link to={'/movieDetails/' + movie.imdbID} >
                                     <Card.Img variant="top" src={movie.Poster === "N/A" ? 'https://http.cat/images/404.jpg' : movie.Poster} alt={movie.Title} className="w-100 locandine"/>
                                 </Link>
-                            <Card.Title className="flex-grow-1 fs-6 text-light">{movie.Title}</Card.Title>
+                            <Card.Title className="flex-grow-1 p-2 fs-6 text-light">{movie.Title}</Card.Title>
                             </Card>
                 </Col>
                     ))

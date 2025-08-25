@@ -37,7 +37,7 @@ const MyNavbar = function () {
 
                     {/* right side */}
                     <button className="border-0 bg-transparent mx-1">
-                        <a href="#" className="text-light"><i className="bi bi-search"></i></a>
+                        <Link to='/search' className="text-light"><i className="bi bi-search"></i></Link>
                     </button>
                     <button className="border-0 bg-transparent mx-1">
                         <a href="#" className="text-light text-decoration-none">KIDS</a>
